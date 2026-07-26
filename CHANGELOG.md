@@ -85,6 +85,3 @@ Nothing planned. AI Model Guard v0.2.0 is the last planned release. Future work 
 - No publisher signature verification (only SHA-256 hashing)
 - No integration with specific model loaders (llama.cpp, Hugging Face, etc.)
 - `MODELGUARD_PASSWORD` env var is convenient but visible to any process that can read the environment (e.g., `/proc/<pid>/environ` on Linux, or `Get-Process` env in PowerShell). For production, prefer the interactive prompt or a secrets manager that injects the env var only for the duration of the command.
-
-[Unreleased]: https://github.com/lordxmen2k/aimodelguard/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/lordxmen2k/aimodelguard/releases/tag/v0.1.0

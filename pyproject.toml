@@ -10,10 +10,10 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
 authors = [
-    {name = "Gerald Enrique Nelson Mc Kenzie", email = "gerald@example.com"},
+    {name = "Gerald Enrique Nelson Mc Kenzie", email = "lordxmen2k@gmail.com"},
 ]
 maintainers = [
-    {name = "Gerald Enrique Nelson Mc Kenzie", email = "gerald@example.com"},
+    {name = "Gerald Enrique Nelson Mc Kenzie", email = "lordxmen2k@gmail.com"},
 ]
 keywords = ["ai", "security", "model-governance", "model-registry", "llm", "access-control"]
 classifiers = [
@@ -48,9 +48,9 @@ test = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/lordxmen2k/aimodelguard"
-"Bug Tracker" = "https://github.com/lordxmen2k/aimodelguard/issues"
-Source = "https://github.com/lordxmen2k/aimodelguard"
+Homepage = "https://pypi.org/project/aimodelguard/"
+"Bug Tracker" = "https://pypi.org/project/aimodelguard/#history"
+Source = "https://pypi.org/project/aimodelguard/#files"
 
 [project.scripts]
 aimodelguard = "aimodelguard.cli:cli"

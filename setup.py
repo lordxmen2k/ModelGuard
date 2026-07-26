@@ -21,11 +21,11 @@ setup(
     description="A password-protected CLI for managing an allowlist of approved AI model signatures",
     long_description=read_long_description(),
     long_description_content_type="text/markdown",
-    url="https://github.com/lordxmen2k/aimodelguard",
+    url="https://pypi.org/project/aimodelguard/",
     project_urls={
-        "Bug Tracker": "https://github.com/lordxmen2k/aimodelguard/issues",
-        "Source": "https://github.com/lordxmen2k/aimodelguard",
-        "Documentation": "https://github.com/lordxmen2k/aimodelguard#readme",
+        "Bug Tracker": "https://pypi.org/project/aimodelguard/#history",
+        "Source": "https://pypi.org/project/aimodelguard/#files",
+        "Documentation": "https://pypi.org/project/aimodelguard/",
     },
     packages=find_packages(exclude=["tests", "tests.*"]),
     classifiers=[
