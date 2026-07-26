@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aimodelguard"
+version = "0.2.0"
+description = "A password-protected CLI for managing an allowlist of approved AI model signatures"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Gerald Enrique Nelson Mc Kenzie", email = "gerald@example.com"},
+]
+maintainers = [
+    {name = "Gerald Enrique Nelson Mc Kenzie", email = "gerald@example.com"},
+]
+keywords = ["ai", "security", "model-governance", "model-registry", "llm", "access-control"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = [
+    "click>=8.0",
+    "cryptography>=41.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "build>=0.10",
+    "twine>=4.0",
+]
+test = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/lordxmen2k/aimodelguard"
+"Bug Tracker" = "https://github.com/lordxmen2k/aimodelguard/issues"
+Source = "https://github.com/lordxmen2k/aimodelguard"
+
+[project.scripts]
+aimodelguard = "aimodelguard.cli:cli"
+
+[tool.setuptools]
+packages = ["aimodelguard"]
+include-package-data = true
+zip-safe = false
+
+[tool.setuptools.package-data]
+aimodelguard = ["py.typed"]
