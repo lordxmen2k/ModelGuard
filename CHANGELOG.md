@@ -25,6 +25,8 @@ Nothing planned. AI Model Guard v0.2.0 is the last planned release. Future work 
 - **`database.verify_model()` result now includes `sha256_hash`** in the details dict
 - **13 new tests** in `tests/test_library_api.py` — covers all result types, password sources, use case policy, quarantine, env var fallback
 - **Total test count:** 20 (was 7 in v0.1.0)
+- **`aimodelguard handbook` command** — prints the path to the bundled operations handbook PDF
+- **Handbook PDF bundled with the package** — `docs/AIModelGuard-Handbook.pdf` is installed alongside the code (under `share/doc/aimodelguard/` on POSIX systems), making the full reference documentation available to anyone who runs `pip install aimodelguard`. No separate download needed.
 
 ### Changed
 - Version bumped to 0.2.0 in `setup.py`, `pyproject.toml`, and `aimodelguard/__init__.py`

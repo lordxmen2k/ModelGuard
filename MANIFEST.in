@@ -9,6 +9,7 @@ include .gitignore
 include aimodelguard/py.typed
 
 recursive-include aimodelguard *.py
+include docs/*.pdf
 
 global-exclude __pycache__
 global-exclude *.py[cod]

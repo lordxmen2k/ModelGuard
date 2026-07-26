@@ -1,5 +1,5 @@
 """
-ModelGuard CLI — Command-line interface for managing approved AI model signatures.
+AI Model Guard CLI — Command-line interface for managing approved AI model signatures.
 """
 
 import click
@@ -47,7 +47,7 @@ def get_master_password(confirm: bool = False) -> str:
 @click.group()
 @click.version_option()
 def cli():
-    """ModelGuard — Manage an allowlist of approved AI model signatures."""
+    """AI Model Guard — Manage an allowlist of approved AI model signatures."""
     # Reconfigure stdout/stderr to UTF-8 so Unicode glyphs (✓, ✗, ⚠) work on
     # Windows consoles that default to charmap encoding. Safe no-op on POSIX.
     try:
@@ -64,7 +64,7 @@ def cli():
     help="Path to the database file"
 )
 def init(db_path):
-    """Initialize the ModelGuard database (one-time setup)."""
+    """Initialize the AI Model Guard database (one-time setup)."""
     db_path = Path(db_path).expanduser()
 
     if db_path.exists():
@@ -72,7 +72,7 @@ def init(db_path):
         click.echo("Use 'aimodelguard list' to see approved models.", err=True)
         sys.exit(1)
 
-    click.echo("Initializing ModelGuard database...")
+    click.echo("Initializing AI Model Guard database...")
     click.echo("You'll be asked to set a master password.")
     click.echo("This password will be required for all operations.")
     click.echo("")
@@ -616,6 +616,48 @@ def backup_verify(db_path):
     except Exception as e:
         click.echo(f"✗ Error: {e}", err=True)
         sys.exit(1)
+
+
+@cli.command()
+def handbook():
+    """Print the path to the bundled operations handbook (PDF).
+
+    The handbook is installed alongside the package via `pip install aimodelguard`
+    and is also downloadable from the project's PyPI page. It contains the full
+    reference documentation in a printable, shareable format.
+    """
+    import shutil
+    from pathlib import Path
+
+    # Try the installed location (data_files target) first
+    candidates = []
+
+    # sys.prefix/share/doc/aimodelguard/ (POSIX, set by data_files)
+    if hasattr(sys, "prefix"):
+        candidates.append(Path(sys.prefix) / "share" / "doc" / "aimodelguard" / "AIModelGuard-Handbook.pdf")
+
+    # The package's own docs/ dir (when running from a source checkout or in-tree)
+    pkg_dir = Path(__file__).resolve().parent.parent
+    candidates.append(pkg_dir / "docs" / "AIModelGuard-Handbook.pdf")
+
+    # Find the first one that exists
+    found = None
+    for path in candidates:
+        if path.exists():
+            found = path
+            break
+
+    if found is None:
+        click.echo("✗ Handbook PDF not found.", err=True)
+        click.echo("  Expected at one of:", err=True)
+        for path in candidates:
+            click.echo(f"    - {path}", err=True)
+        click.echo("", err=True)
+        click.echo("  If you installed via pip, the package data may be missing.", err=True)
+        click.echo("  Try reinstalling: pip install --force-reinstall aimodelguard", err=True)
+        sys.exit(1)
+
+    click.echo(str(found))
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 """
-ModelGuard backup system — Automatic backups to protect against database corruption.
+AI Model Guard backup system — Automatic backups to protect against database corruption.
 
 The backup system ensures that if the main database is corrupted, the user can
 restore from a recent backup without losing their approved model list.

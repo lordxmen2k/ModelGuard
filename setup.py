@@ -69,6 +69,13 @@ setup(
     package_data={
         "aimodelguard": ["py.typed"],
     },
+    data_files=[
+        # Install the handbook PDF alongside the package so `pip install aimodelguard`
+        # makes it available to users without a separate download. The actual install
+        # path depends on the platform (sys.prefix/share/doc/aimodelguard/ on POSIX,
+        # similar on Windows). Use `aimodelguard handbook` to get the resolved path.
+        ("share/doc/aimodelguard", ["docs/AIModelGuard-Handbook.pdf"]),
+    ],
     zip_safe=False,
     keywords="ai security model-governance model-registry llm access-control",
     license="Apache-2.0",

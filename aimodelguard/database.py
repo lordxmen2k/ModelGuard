@@ -1,5 +1,5 @@
 """
-ModelGuard database — SQLite-based storage for approved model signatures and audit logs.
+AI Model Guard database — SQLite-based storage for approved model signatures and audit logs.
 
 The database is encrypted using SQLCipher with the master password as the key.
 Includes automatic backup before destructive operations.
@@ -20,7 +20,7 @@ from .backup import BackupManager
 
 
 class AIModelGuardDatabase:
-    """Manages the ModelGuard SQLite database with encryption and automatic backups."""
+    """Manages the AI Model Guard SQLite database with encryption and automatic backups."""
 
     def __init__(
         self,

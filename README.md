@@ -17,8 +17,11 @@ AI Model Guard solves this with cryptographic signature verification and a local
 ## Quick Start
 
 ```bash
-# Install
+# Install from PyPI
 pip install aimodelguard
+
+# Get the path to the bundled operations handbook (PDF)
+aimodelguard handbook
 
 # Initialize the database (one-time)
 aimodelguard init
@@ -29,6 +32,20 @@ aimodelguard approve --model ./qwen-1.5b.gguf --publisher "Qwen Team" --use-case
 # Verify a model before running
 aimodelguard verify --model ./qwen-1.5b.gguf
 ```
+
+## The Operations Handbook
+
+The full reference documentation is shipped as a PDF alongside the code on PyPI. After `pip install aimodelguard`, run:
+
+```bash
+aimodelguard handbook
+# prints the path to the bundled PDF, e.g.:
+# /usr/local/share/doc/aimodelguard/AIModelGuard-Handbook.pdf
+```
+
+The PDF is 14 pages, ~870 KB, and covers everything in this README plus the threat model, security architecture, integration patterns, and troubleshooting.
+
+**DOI:** 10.5281/zenodo.21578648 (cites the whole project: code + handbook)
 
 ## Python Library API (v0.2.0+)
 

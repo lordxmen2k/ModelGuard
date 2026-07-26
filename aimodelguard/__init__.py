@@ -1,7 +1,7 @@
 """
-ModelGuard — A password-protected CLI for managing an allowlist of approved AI model signatures.
+AI Model Guard — A password-protected CLI for managing an allowlist of approved AI model signatures.
 
-Prevent unauthorized AI models from running on your infrastructure.
+Prevent unauthorized AI models from running on your infrastructure from running on your infrastructure.
 
 Python library API (v0.2.0+):
     >>> import aimodelguard
